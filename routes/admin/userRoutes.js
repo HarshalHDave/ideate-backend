@@ -8,7 +8,7 @@ const router = express.Router();
 const userController = require('../../controller/admin/userController');
 const { PLATFORM } =  require('../../constants/authConstant'); 
 const auth = require('../../middleware/auth');
-router.route('/admin/user/me').get(auth(PLATFORM.ADMIN),userController.getLoggedInUserInfo);
+router.route('/admin/user/me').get(userController.getLoggedInUserInfo);
 router.route('/admin/user/create').post(userController.addUser);
 router.route('/admin/user/addBulk').post(userController.bulkInsertUser);
 router.route('/admin/user/list').post(userController.findAllUser);
@@ -21,7 +21,7 @@ router.route('/admin/user/softDelete/:id').put(userController.softDeleteUser);
 router.route('/admin/user/softDeleteMany').put(userController.softDeleteManyUser);
 router.route('/admin/user/delete/:id').delete(userController.deleteUser);
 router.route('/admin/user/deleteMany').post(userController.deleteManyUser);
-router.route('/admin/user/change-password').put(auth(PLATFORM.ADMIN),userController.changePassword);
-router.route('/admin/user/update-profile').put(auth(PLATFORM.ADMIN),userController.updateProfile);
+router.route('/admin/user/change-password').put(userController.changePassword);
+router.route('/admin/user/update-profile').put(userController.updateProfile);
 
 module.exports = router;
