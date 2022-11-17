@@ -36,7 +36,6 @@ module.exports = {
       code: 1000,
       ignorePattern: '^import .*',
     }],
-    'linebreak-style': ['error', process.platform === 'win32' ? 'windows' : 'unix'],
     'space-infix-ops': ['error', { int32Hint: false }],
     'space-before-function-paren': ['error', {
       anonymous: 'always',
